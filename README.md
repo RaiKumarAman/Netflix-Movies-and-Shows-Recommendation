@@ -19,7 +19,7 @@ This repository contains a Netflix Show and Movie Recommender System that uses m
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/RaiKumarAman/Netflix-Movies-and-Shows-Recommendation.git
+   git clone https://github.com/username/Netflix-Movies-and-Shows-Recommendation.git
    cd Netflix-Movies-and-Shows-Recommendation
    ```
 
