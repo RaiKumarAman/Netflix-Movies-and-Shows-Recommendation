@@ -67,7 +67,13 @@ option = st.selectbox("Choose a Movie or Show", netflix["title"].values)
 if st.button("Recommend"):
     rec_titles, posters = recommend(option)
     cols = st.columns(5)
-    for i in range(5):
+    ffor i in range(5):
         with cols[i]:
-            st.text(rec_titles[i])
-            st.image(posters[i])
+            title = rec_titles[i]
+            poster = posters[i]
+            netflix_url = f"https://www.netflix.com/search?q={'+'.join(title.split())}"
+            st.markdown(
+                f"[![{title}]({poster})]({netflix_url})",
+                unsafe_allow_html=True
+            )
+            st.caption(title)
