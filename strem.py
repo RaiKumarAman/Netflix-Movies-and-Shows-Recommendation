@@ -67,7 +67,7 @@ option = st.selectbox("Choose a Movie or Show", netflix["title"].values)
 if st.button("Recommend"):
     rec_titles, posters = recommend(option)
     cols = st.columns(5)
-    ffor i in range(5):
+    for i in range(5):
         with cols[i]:
             title = rec_titles[i]
             poster = posters[i]
