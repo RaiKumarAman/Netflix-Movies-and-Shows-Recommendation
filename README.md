@@ -4,6 +4,8 @@
 
 This repository contains a Netflix Show and Movie Recommender System that uses machine learning algorithms to recommend movies and TV shows based on user preferences and viewing history. The recommender system leverages content-based filtering to provide personalized recommendations.
 
+You can access the streamlit by clicking here: https://imdb-movie-rating-prediction-o3g49whxbbeshwzyaz9uxn.streamlit.app/
+
 ## Features
 
 - **Content-Based Filtering**: Recommends movies and shows based on the features of the items themselves (e.g., genre, director, cast).
