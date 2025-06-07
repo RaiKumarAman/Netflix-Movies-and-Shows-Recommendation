@@ -6,22 +6,18 @@ import gzip
 import pickle
 import os
 
+@st.cache_data(show_spinner="Loading similarity matrix...")
 def download_gzip_pickle(url, save_as='similarity.pkl.gz'):
     if not os.path.exists(save_as):
-        print("Downloading:", url)
         r = requests.get(url)
         with open(save_as, 'wb') as f:
             f.write(r.content)
-    else:
-        print("File already downloaded.")
-
-    # Load the gzip-compressed pickle file
     with gzip.open(save_as, 'rb') as f:
         return pickle.load(f)
 
-# ✅ Use the fixed direct download link here:
-gdrive_url = "https://drive.google.com/uc?export=download&id=1hJXZV1pPOJx7DuD8hjqa1vUdOM4LN1Is"
-similarity = download_gzip_pickle(gdrive_url)
+# ✅ Load similarity from Hugging Face
+huggingface_url = "https://huggingface.co/datasets/KungFuBear/netflix-similarity/resolve/main/similarity.pkl.gz"
+similarity = download_gzip_pickle(huggingface_url)
 # Load pickled data
 netflix = pd.DataFrame(pickle.load(open('netflix_rec.pkl', 'rb')))
 
